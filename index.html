@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Resume</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#111;
+}
+
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:270px;
+    height:100vh;
+    background:white;
+    box-shadow:2px 0 15px rgba(0,0,0,.1);
+    text-align:center;
+    padding:30px 20px;
+    z-index:1000;
+    transition:.4s;
+}
+
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #111;
+    margin-bottom:20px;
+}
+
+.sidebar h2{
+    margin-bottom:25px;
+}
+
+nav a{
+    display:block;
+    text-decoration:none;
+    color:#111;
+    font-weight:900;
+    padding:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#111;
+    color:white;
+    border-radius:8px;
+    transform:translateX(8px);
+}
+
+
+/* Hamburger */
+.menu-btn{
+    display:none;
+    position:fixed;
+    top:20px;
+    left:20px;
+    font-size:30px;
+    cursor:pointer;
+    z-index:2000;
+}
+
+
+/* Main */
+main{
+    margin-left:270px;
+}
+
+section{
+    min-height:100vh;
+    padding:80px 10%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    animation:fadeUp 1s ease;
+}
+
+h1{
+    font-size:50px;
+    text-align:center;
+}
+
+.typing{
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+
+/* About */
+.about{
+    position:relative;
+    overflow:hidden;
+}
+
+.about::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("background.png") center/contain no-repeat;
+    opacity:.08;
+}
+
+.about-content{
+    position:relative;
+    z-index:1;
+}
+
+
+
+
+
+/* Cards */
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+
+/* Animations */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.zoom{
+    animation:zoom 1s;
+}
+
+@keyframes zoom{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* Mobile */
+@media(max-width:768px){
+
+.sidebar{
+    left:-270px;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.menu-btn{
+    display:block;
+}
+
+main{
+    margin-left:0;
+}
+
+section{
+    padding:70px 8%;
+}
+
+h1{
+    font-size:36px;
+}
+
+.typing{
+    font-size:22px;
+}
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+
+<aside class="sidebar" id="sidebar">
+
+<img src="profile.jpg" class="profile-img">
+
+<h2>John Owusu</h2>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#media">Social Media Handles</a>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#hobbies">Hobbies & Interest</a>
+<a href="#others">Others</a>
+<a href="#declaration">Declaration</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</aside>
+
+
+
+<main>
+
+
+<section id="home" class="zoom">
+<h1>Hello, I'm</h1>
+
+<div class="typing">
+<span id="name"></span>
+</div>
+</section>
+
+
+
+<section id="about" class="about">
+
+<div class="about-content">
+
+<h1>About Me</h1>
+
+
+
+<div class="card">
+
+
+<div class="card">
+<p>• Highly organized and adaptable professional with extensive experience in administrative support, supervision, and technical operations. Skilled in streamlining processes, improving efficiency, and coordinating projects to ensure successful execution in fast-paced environments. Recognized for strong problem-solving abilities, attention to detail, and the ability to collaborate effectively with diverse teams. Committed to delivering high-quality results through innovation, reliability, and continuous improvement.</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section id="media" class="media">
+<div class="card">
+
+<h2>Social Media Handles</h2><br>
+
+
+<a class="social-icon" href="https://www.linkedin.com/in/johnowusu/" target="_blank"> <i class="fa-brands fa-linkedin-in fa-3x fa-beat-fade"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a class="social-icon" href="https://www.youtube.com/@wayeyietink51" target="_blank"> <i class="fa-brands fa-youtube fa-3x fa-beat-fade"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a class="social-icon" href="https://x.com/wayeyietink51" target="_blank"> <i class="fa-solid fa-x fa-3x fa-beat-fade"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a class="social-icon" href="https://whatsapp.com/channel/0029VbBItaLDeON3ZGUjTe3u"> <i class="fa-brands fa-whatsapp fa-3x fa-beat-fade"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a class="social-icon" href="https://www.facebook.com/share/1Cx4CtfutT/"> <i class="fa-brands fa-facebook-square fa-3x fa-beat-fade"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+
+</section>
+
+
+<section id="education">
+
+<h1>Education</h1>
+
+<div class="card">
+<h3>Diploma in Business Administration Studies</h3>
+<p>
+<h4>Star Computer Training Institute (A.B.M.A., UK) | January 2005 - February 2006</h4><br>
+</p>
+<p>• Studied core principles of business administration, management, and organizational operations.</p>
+<p>• Developed knowledge of accounting, finance, marketing, and human resource management.</p>
+<p>• Gained skills in business communication, office administration, and customer service.</p>
+<p>• Learned business planning, problem-solving, and decision-making techniques.</p>
+<p>• Built proficiency in administrative procedures, record management, and professional workplace practices.</p>
+
+</div>
+
+
+<div class="card">
+<h3>Certificate in Microsoft Office</h3>
+<p>
+<h4>Star Computer Training Institute (A.B.M.A., UK) | March 2006 - June 2006</h4><br>
+</p>
+<p>• Gained knowledge of workplace risk identification, assessment, and control measures.</p>
+<p>• Developed safe manual handling techniques to prevent workplace injuries.</p>
+<p>• Learned COSHH (Control of Substances Hazardous to Health) procedures and safety practices.</p>
+<p>• Understood proper selection, usage, and maintenance of Personal Protective Equipment (PPE).</p>
+<p>• Enhanced awareness of health, safety, and compliance standards in the workplace.</p>
+
+</div>
+
+
+<div class="card">
+<h3>Certificate in Microsoft Office</h3>
+<p>
+<h4>Expro Gulf, Ghana | September 2009 – March 2014 </h4><br>
+</p>
+<p>• Gained knowledge of workplace risk identification, assessment, and control measures.</p>
+<p>• Developed safe manual handling techniques to prevent workplace injuries.</p>
+<p>• Learned COSHH (Control of Substances Hazardous to Health) procedures and safety practices.</p>
+<p>• Understood proper selection, usage, and maintenance of Personal Protective Equipment (PPE).</p>
+<p>• Enhanced awareness of health, safety, and compliance standards in the workplace.</p>
+
+</div>
+
+
+
+</section>
+
+<section id="experience">
+
+<h1>Experience</h1>
+
+<div class="card">
+<h3>Store Assistant – Barzan</h3>
+<p>
+<h4>Gulf Helicopter Company, Qatar | January 2025 - May 2026</h4><br>
+</p>
+<p>• Supported store operations by managing inventory, equipment, and material availability efficiently.</p>
+<p>• Received, inspected, and issued materials, tools, and spare parts according to company procedures.</p>
+<p>• Maintained accurate inventory records, stock systems, and assisted with periodic audits.</p>
+<p>• Coordinated with maintenance and operations teams to ensure timely material supply.</p>
+<p>• Ensured compliance with safety standards while improving logistics organization and workflow efficiency.</p>
+
+</div>
+
+<div class="card">
+<h3>Technical Assistant</h3>
+<p>
+<h4>QatarEnergy LNG, Al Khor Community, Qatar | March 2023 – December 2025</h4><br>
+</p>
+<p>• Led a team to ensure high standards of cleanliness, safety, and facility operations.</p>
+<p>• Conducted inspections of HVAC, plumbing, and electrical systems to identify maintenance requirements.</p>
+<p>• Coordinated with contractors for repairs, maintenance, and renovation projects efficiently.</p>
+<p>• Managed facility documentation, inspection reports, and preventive maintenance schedules.</p>
+<p>• Improved operational efficiency through effective supervision and proactive problem-solving.</p>
+
+
+</div>
+
+<div class="card">
+<h3>Welfare Assistant</h3>
+<p>
+<h4>Amwaj Catering Services, Mowasalat / TBS, FIFA Operations Qatar | August 2021 – February  2023</h4><br>
+</p>
+<p>• Prepared daily, weekly, and monthly reports on staff performance, attendance, and operations.</p>
+<p>• Managed uniform and PPE issuance while maintaining accurate records using Microsoft Dynamics.</p>
+<p>• Coordinated travel documentation and timesheets to support accurate payroll processing.</p>
+<p>• Organized staff training sessions focused on hygiene standards and customer service.</p>
+<p>• Ensured smooth administrative operations through effective record management and coordination.</p>
+
+
+</div>
+
+<div class="card">
+<h3>Warehouse Foreman / Forklift Operator</h3>
+<p>
+<h4>Twyford Ghana Ceramics, Ghana | August 2016 – May 2019</h4><br>
+</p>
+<p>• Operated forklifts to transport materials safely and efficiently within the warehouse.</p>
+<p>• Supervised warehouse staff and coordinated daily operational activities.</p>
+<p>• Ensured compliance with safety procedures and company operational standards.</p>
+<p>• Monitored material handling, storage, and inventory movement for accuracy.</p>
+<p>• Contributed to efficient warehouse operations through teamwork and effective supervision.</p>
+
+
+</div>
+
+<div class="card">
+<h3>Driver</h3>
+<p>
+<h4>Freelencer, Ghana | April 2014 – July 2016</h4><br>
+</p>
+<p>• Operated heavy buses safely and efficiently while adhering to traffic laws and company policies.</p>
+<p>• Conducted pre-trip and post-trip vehicle inspections to ensure roadworthiness and passenger safety.</p>
+<p>• Transported passengers on scheduled routes, maintaining punctuality and excellent customer service.</p>
+<p>• Reported mechanical issues promptly and coordinated routine maintenance to minimize downtime.</p>
+<p>• Maintained accurate trip logs, fuel records, and other required transportation documentation.</p>
+
+
+</div>
+
+
+</div>
+
+<div class="card">
+<h3>Well-test Technician / Forklift Operator</h3>
+<p>
+<h4>Expro Gulf, Ghana | September 2009 – March 2014</h4><br>
+</p>
+<p>• Performed maintenance and repair of equipment and machinery to ensure operational reliability.</p>
+<p>• Operated forklifts for safe and efficient material handling and logistics support.</p>
+<p>• Assisted in maintaining smooth and efficient daily operational workflows.</p>
+<p>• Conducted routine equipment inspections to identify maintenance requirements.</p>
+<p>• Followed safety procedures to promote a secure and productive work environment.</p>
+
+
+</div>
+</section>
+
+<section id="skills">
+
+<h1>Skills</h1>
+
+<div class="card">
+<h3>Facility Management</h3>
+<br>
+<p>• Managed HVAC, plumbing, and electrical system maintenance activities to ensure reliable operations.</p>
+<p>• Monitored facility systems to identify issues and coordinate timely corrective actions.</p>
+<p>• Conducted routine inspections to maintain equipment performance and safety standards.</p>
+<p>• Coordinated with maintenance teams and contractors for repairs and servicing.</p>
+<p>• Supported efficient facility operations through effective maintenance planning and supervision.</p>
+
+</div>
+
+
+<div class="card">
+<h3>Preventive Maintenance Planning</h3>
+<br>
+<p>• Scheduled and monitored routine maintenance activities to ensure equipment reliability.</p>
+<p>• Prepared and maintained maintenance records, inspection reports, and service documentation.</p>
+<p>• Conducted regular inspections to identify potential issues before equipment failure occurs.</p>
+<p>• Coordinated with technical teams to complete preventive maintenance tasks on time.</p>
+<p>• Helped reduce downtime and improve operational efficiency through effective maintenance planning.</p>
+
+</div>
+
+
+<div class="card">
+<h3>Technical Troubleshooting</h3>
+<br>
+<p>• Diagnosed and resolved mechanical and electrical issues across residential, commercial, and industrial environments.</p>
+<p>• Performed inspections to identify faults and determine effective repair solutions.</p>
+<p>• Applied technical knowledge to troubleshoot equipment and system malfunctions.</p>
+<p>• Coordinated with maintenance teams to implement corrective actions efficiently.</p>
+<p>• Ensured safe and reliable operation of systems through timely troubleshooting and repairs.</p>
+
+</div>
+
+<div class="card">
+<h3>Heavy Equipment Operation</h3>
+<br>
+<p>• Operated certified forklifts safely for material handling and warehouse operations.</p>
+<p>• Managed loading, unloading, and movement of materials while following safety procedures.</p>
+<p>• Conducted routine equipment checks to ensure safe and efficient operation.</p>
+<p>• Supported warehouse logistics through proper handling and storage of materials.</p>
+<p>• Maintained compliance with safety standards and operational guidelines.</p>
+
+</div>
+
+<div class="card">
+<h3>Safety Compliance</h3>
+<br>
+<p>• Ensured compliance with PPE requirements, hygiene standards, and workplace safety procedures.</p>
+<p>• Conducted risk assessments to identify hazards and implement appropriate control measures.</p>
+<p>• Promoted safe working practices in line with health and safety regulations.</p>
+<p>• Monitored workplace conditions to maintain a secure and compliant environment.</p>
+<p>• Supported safety training and awareness programs to improve team safety performance.</p>
+
+</div>
+
+
+</section>
+
+
+
+<section id="hobbies">
+
+<h1>Hobbies & Interest</h1>
+
+<div class="card">
+<h3>Hobbies</h3>
+<br>
+<p>• Walking or jogging – Improves fitness and reduces stress.</p>
+<p>• Reading books – Expands knowledge and improves focus.</p>
+<p>• Yoga or exercise – Boosts health, posture, and energy.</p>
+<p>• Photography or drawing – Enhances creativity and relaxation.</p>
+<p>• Gardening – Promotes mindfulness and provides a refreshing break.</p>
+
+</div>
+
+<div class="card">
+<h3>Interest</h3>
+<br>
+<p>• Professional development – Learning new skills and improving expertise.</p>
+<p>• Health and fitness – Staying active through exercise or sports.</p>
+<p>• Technology – Exploring new software, AI, and digital tools.</p>
+<p>• Networking – Building professional relationships and communication skills.</p>
+<p>• Travel and culture – Visiting new places and experiencing different cultures.</p>
+
+</div>
+
+
+</section>
+<section id="others" class="others">
+
+<div class="others-content">
+
+<h1>Others</h1>
+
+
+
+<div class="card">
+<p>• Hello, I'm John Owusu, a Ghanaian content creator, media personality, and professional based in Qatar. I am passionate about sharing trending news, current affairs, inspirational stories, and discussions that educate, inform, and inspire people across Africa and beyond.
+Through my platform, I cover topics including breaking news, social issues, African unity, interviews, religious events, and opportunities that help people stay informed and empowered. My goal is to present balanced, engaging, and thought-provoking content while encouraging respectful dialogue among viewers.
+With years of work experience and a commitment to excellence, I believe in honesty, hard work, and continuous learning. I strive to use my voice and platform to promote peace, unity, and positive change.
+Thank you for visiting my website and supporting my journey. I invite you to explore my content, share your thoughts, and join our growing community as we learn and grow together..</p>
+
+
+</div>
+</section>
+
+
+
+<section id="declaration">
+
+<h1>Declaration</h1>
+
+<div class="card">
+<br>
+<p>• I hereby declare that the information provided by me in this job application is true and accurate to the best of my knowledge and belief. I understand that any false or misleading information may result in the rejection of my application or termination of employment if discovered later. I also confirm that I am applying for this position voluntarily and, if selected, I will comply with the company's policies, rules, and regulations.</p>
+
+
+
+</div>
+
+
+</section>
+
+
+<section id="contact">
+
+<h1>Contact</h1>
+
+<div class="card">
+
+Email:
+waayeyie@gmail.com
+
+<br><br>
+
+Phone:
++233547777625
+
+</div>
+
+</section>
+
+
+
+</main>
+
+
+
+<script>
+
+// Mobile sidebar
+function toggleMenu(){
+    document.getElementById("sidebar")
+    .classList.toggle("active");
+}
+
+
+// Typing animation
+
+const names=[
+"John Owusu",
+"Technical Assistant",
+"Welfare Assistant",
+"Warehouse Foreman"
+];
+
+let index=0;
+let char=0;
+let deleting=false;
+
+const text=document.getElementById("name");
+
+
+function typing(){
+
+let current=names[index];
+
+
+if(!deleting){
+
+text.innerHTML=current.substring(0,char++);
+    
+if(char>current.length){
+    deleting=true;
+    setTimeout(typing,1200);
+    return;
+}
+
+}
+
+else{
+
+text.innerHTML=current.substring(0,char--);
+
+if(char===0){
+    deleting=false;
+    index=(index+1)%names.length;
+}
+
+}
+
+
+setTimeout(typing,deleting?70:120);
+
+}
+
+
+typing();
+
+
+// Close menu after clicking links
+
+document.querySelectorAll("nav a")
+.forEach(link=>{
+link.onclick=()=>{
+document.getElementById("sidebar")
+.classList.remove("active");
+}
+});
+
+</script>
+
+
+</body>
+</html>
